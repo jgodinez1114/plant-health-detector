@@ -13,6 +13,6 @@ with picamera.PiCamera() as camera:
 
     # name the files in the order they were captured
     for img in range(5):
-        imageName="piImage"+str(img+1)+".jpg"
+        imageName="healthyImage"+str(img+1)+".jpg"
         camera.capture(imageName)
     #camera.stop_preview()

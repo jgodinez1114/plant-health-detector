@@ -10,19 +10,19 @@ import numpy as np
 
 def fetchImageForProcessing():
     #read in an image file
-    file1 = cv2.imread("piImage1.jpg")
+    file1 = cv2.imread("NEWnewImage1.jpg")
     #optional: show image which was fetched
     #cv2.imshow("myImage",file1)
     
     return file1
 
-def colorDetection(myImageMatrix):
+def detectForBlue(myImageMatrix):
     """ Arg: take in an image file for processing
         check the image against set threshold values """
     #create 2 arrays with threshold values (MAT objects or vectors can be used in cpp)
     #these values correspond to blue. Blue detection occuring here
-    lowerThresh = np.array([100, 50, 50 ])    #initial values:110,0,0
-    upperThresh = np.array([140, 255, 255]) #initial values:130,0,0
+    lowerThreshBlue = np.array([110, 50, 50 ])    #initial values:110,0,0
+    upperThreshBlue = np.array([130, 255, 255]) #initial values:130,0,0
     # note: hues corrspond to a circular(360 degree) mapping
     
     # change BGR to HSV
@@ -36,7 +36,7 @@ def colorDetection(myImageMatrix):
     #bitwise AND to extract the targeted color in detected areas
     extractedRegion = cv2.bitwise_and(moddedImage,moddedImage,mask = mask)
     # show the mask
-    cv2.imshow("Extracted Region", extractedRegion)
+    cv2.imshow("Extracted Blue Region", extractedRegion)
     cv2.waitKey(0)
     
     # create a MAT with blue==255, all others==0
@@ -54,7 +54,7 @@ def colorDetection(myImageMatrix):
 
 myImageMatrix = fetchImageForProcessing()
 cv2.imshow("my image matrix",myImageMatrix)
-colorDetection(myImageMatrix)
+detectForBlue(myImageMatrix)
 
 
     
