@@ -13,7 +13,7 @@ from time import sleep
 camera = PiCamera()
 
 camera.start_preview()
-sleep(5)
+sleep(50)
 camera.stop_preview()
 
 # optional rotation statements
