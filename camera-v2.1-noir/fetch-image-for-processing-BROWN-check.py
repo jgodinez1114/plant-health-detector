@@ -33,7 +33,7 @@ def detectForBlue(myImageMatrix):
     moddedImage = cv2.cvtColor(myImageMatrix, cv2.COLOR_BGR2HSV)
 
     #show the color detection in a mask by showing the pixels as white where detection occured(black elsewhere)
-    mask = cv2.inRange(moddedImage, lowerThreshBlue, uppupperThreshBlue)
+    mask = cv2.inRange(moddedImage, lowerThreshBlue, upperThreshBlue)
 
     #KEY STEP: see if region of white pixels exits BEFORE bitwise ANDing
 
@@ -47,7 +47,7 @@ def detectForBlue(myImageMatrix):
 
 def detectForBrown(myImageMatrix):
     """ Arg: take in an image file for processing
-        check the image against set threshold values for desired color """
+        check the image against set threshold values for Brown color """
     
 
     #these values correspond to brown. Brown detection occuring here
@@ -78,8 +78,7 @@ def detectForBrown(myImageMatrix):
     
     #take the 1st pixel value and subtract and add 10 to it
     
-    # lower threshold == 220 && upper threshold at 240
-    
+    # lower threshold == 220 && upper threshold at 240    
     
     
     # ToDo: comparison traversal of pixels for brown spotting stages of severity
@@ -87,8 +86,8 @@ def detectForBrown(myImageMatrix):
 
 myImageMatrix = fetchImageForProcessing()
 cv2.imshow("My raw image matrix.",myImageMatrix)
-detectForBrown(myImageMatrix)
-#detectForBlue(myImageMatrix)
+#detectForBrown(myImageMatrix)
+detectForBlue(myImageMatrix)
 
 
     

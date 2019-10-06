@@ -15,7 +15,7 @@ with picamera.PiCamera() as camera:
     # name the files in the order they were captured
     for img in range(5):
         # save the timestamp 
-        date = datetime.datetime.now().stftime(%Y_%m_%d_%H_%M_%S)
+        date = datetime.datetime.now().strftime("%Y_%m_%d_%H_%M_%S")
         imageName="phdImage"+ date +".jpg"
         camera.capture(imageName)
         time.sleep(5)
