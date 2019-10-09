@@ -16,7 +16,7 @@ with picamera.PiCamera() as camera:
     for img in range(5):
         # save the timestamp 
         date = datetime.datetime.now().strftime("%Y_%m_%d_%H_%M_%S")
-        imageName='/home/pi/plant-health-detector/green-module-files'+ date +".jpg"
+        imageName='/home/pi/plant-health-detector/green-module-files/'+ date +".jpg"
         camera.capture(imageName)
         time.sleep(5)
     #camera.stop_preview()
