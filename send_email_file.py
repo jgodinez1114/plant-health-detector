@@ -19,9 +19,9 @@ def send_email_file(subject, attachment, recipient):
     # set up the MIME
     message = MIMEMultipart()
     message['Subject'] = subject
-    message['From'] = 'planthealthdetector@gmail.com'
+    message['From'] = 'address@gmail.com'
     message['To'] = recipient
-    message['Reply-to'] = 'planthealthdetector@gmail.com'
+    message['Reply-to'] = 'address@gmail.com'
 
     message.preamble = 'Multipart message.\n'
 
@@ -36,17 +36,17 @@ def send_email_file(subject, attachment, recipient):
     server = smtplib.SMTP("smtp.gmail.com", 587)
     server.ehlo()
     server.starttls()
-    server.login("planthealthdetector@gmail.com", "phd2019.*")
+    server.login("address@gmail.com", "passwd")
 
     server.sendmail(message['From'], recipient, message.as_string())
     server.quit()
 
 
-dir_name = "C://Users//joelg//PycharmProjects//sendEmail"
+dir_name = "C://Users//joelg//PycharmProjects//sendEmail//venv//Scripts"
 base_file_name = "unhealthyImage1"
 filename_suffix = '.jpg'
 fileToSend = os.path.join(dir_name, base_file_name + filename_suffix)
-send_email_file("Plant Needs Attention Soon", fileToSend, "planthealthdetector@gmail.com")
+send_email_file("Plant Needs Attention Soon", fileToSend, "address@gmail.com")
 
 
 
