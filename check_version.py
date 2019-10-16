@@ -1,5 +1,7 @@
-# USAGE
+# 15 Oct 2019
+# Joel Godinez
 # python check_version.py
+
 
 # import the necessary packages
 from __future__ import print_function
